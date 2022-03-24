@@ -20,8 +20,8 @@ export default {};
 </script>
 
 <style scoped>
-  .home {
-  height: 100vh;
+.home {
+  min-height: 100vh;
   background-color: #232323;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(https://images.mrandmrssmith.com/images/1482x988/3634023-one-and-only-the-palm-hotel-dubai-united-arab-emirates.jpg);

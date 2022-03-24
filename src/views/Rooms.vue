@@ -1,117 +1,97 @@
 <template>
-  <div class="rooms">
-    <!--Room 1-->
-    <div class="card mb-3" style="max-width: 1000px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="" class="img-fluid rounded-start" alt="..." />
+  <div class="container">
+    <div class="row g-5">
+      <!--Room 1-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/7cNRozs.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Geysers Valley Hotel</h3>
+              <router-link :to="{ name: 'Rooms' }"
+                ><button type="button" class="btn">
+                  <span>See more</span>
+                </button></router-link
+              >
+            </div>
+          </a>
         </div>
-        <div class="col-md-2">
-          <h6>Luxurious Double Bed</h6>
+      </div>
+      <!--Room 2-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/CS59IJZ.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Khumbu Valley Hotel</h3>
+              <p class="content-text"><i class="fa fa-map-marker"></i> Nepal</p>
+            </div>
+          </a>
         </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">R955</h5>
-            <p class="card-text">pp/pn</p>
-            <!-- <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            > -->
-            <router-link
-              v-for="room of rooms"
-              :key="room.avail_id"
-              :to="{ name: 'RoomDetails', params: { id: room.avail_id } }"
-            ></router-link>
-          </div>
+      </div>
+      <!--Room 3-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Waipi’o Valley Hotel</h3>
+              <p class="content-text">
+                <i class="fa fa-map-marker"></i> Hawaii
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-    <!--Room 2-->
-    <div class="card mb-3" style="max-width: 1000px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-2">
-          <h6>Luxurious Double Bed</h6>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">R955</h5>
-            <p class="card-text">pp/pn</p>
-            <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
-          </div>
+    <br /><br />
+    <div class="row g-5">
+      <!--Room 4-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Waipi’o Valley Hotel</h3>
+              <p class="content-text">
+                <i class="fa fa-map-marker"></i> Hawaii
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-    <!--Room 3-->
-    <div class="card mb-3" style="max-width: 1000px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-2">
-          <h6>Luxurious Double Bed</h6>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">R955</h5>
-            <p class="card-text">pp/pn</p>
-            <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
-          </div>
+      <!--Room 5-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Waipi’o Valley Hotel</h3>
+              <p class="content-text">
+                <i class="fa fa-map-marker"></i> Hawaii
+              </p>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-    <!--Room 4-->
-    <div class="card mb-3" style="max-width: 1000px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-2">
-          <h6>Luxurious Double Bed</h6>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">R955</h5>
-            <p class="card-text">pp/pn</p>
-            <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Room 5-->
-    <div class="card mb-3" style="max-width: 1000px">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-2">
-          <h6>Luxurious Double Bed</h6>
-        </div>
-        <div class="col-md-6">
-          <div class="card-body">
-            <h5 class="card-title">R955</h5>
-            <p class="card-text">pp/pn</p>
-            <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
-          </div>
+      <!--Room 6-->
+      <div class="col-md-4">
+        <div class="content">
+          <a href="#">
+            <div class="content-overlay"></div>
+            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
+            <div class="content-details fadeIn-bottom">
+              <h3 class="content-title">Waipi’o Valley Hotel</h3>
+              <p class="content-text">
+                <i class="fa fa-map-marker"></i> Hawaii
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -123,17 +103,91 @@ export default {};
 </script>
 
 <style scoped>
-.rooms {
-  height: auto;
-  background-color: #f2c078;
-}
-h5 {
-  font-size: 20px;
-  font-weight: bold;
+.container {
+  margin-top: 200px;
+  z-index: 1;
 }
 
-h6 {
-  padding-top: 100px;
+.title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay {
+  opacity: 1;
+}
+
+.content-image {
+  width: 100%;
+}
+
+img {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3 {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  /* text-transform: uppercase; */
+}
+
+.content-details p {
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom {
+  top: 80%;
 }
 
 .btn {
@@ -176,14 +230,5 @@ h6 {
 .btn:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-.card {
-  margin-left: auto;
-  margin-right: auto;
-  /* padding-top: 50px; */
-  background: white;
-  border: 2px solid;
-  box-shadow: 8px 8px 15px #e4e4e4, 8px 8px 15px #ffffff;
 }
 </style>

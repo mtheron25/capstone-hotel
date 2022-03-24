@@ -26,19 +26,14 @@ export default {
     return {
       name: "",
       email: "",
+      contact: "",
       message: "",
     };
   },
   methods: {
     handleSubmit() {
-      console.log(
-        this.name,
-        this.surname,
-        this.email,
-        this.contact,
-        this.messsage
-      );
-      fetch("https://jsonplaceholder.typicode.com/posts", {
+      console.log(this.name, this.email, this.contact, this.messsage);
+      fetch("https://hotel-new-api.herokuapp.com/contact", {
         method: "POST",
         body: JSON.stringify({
           title: "foo",
@@ -51,6 +46,7 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => console.log(json));
+      alert("Message sent successfully!");
     },
   },
 };
@@ -63,7 +59,6 @@ export default {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(https://images.mrandmrssmith.com/images/1482x988/3634023-one-and-only-the-palm-hotel-dubai-united-arab-emirates.jpg);
   background-size: cover;
-  background-attachment: fixed;
 }
 .contact-form {
   padding-top: 150px;
@@ -80,10 +75,10 @@ form {
   backdrop-filter: blur(7.9px);
   -webkit-backdrop-filter: blur(7.9px);
   border: 1px solid rgba(86, 77, 128, 0.22);
+  z-index: 1;
 }
 h7 {
   font-size: 80px;
-
   color: white;
   font-weight: bolder;
   font-family: cursive;
@@ -91,7 +86,7 @@ h7 {
 textarea {
   width: 100%;
   height: 100px;
-  background: #98A6D4;
+  background: #98a6d4;
 }
 label {
   color: white;
@@ -108,13 +103,13 @@ input {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #98A6D4;
+  border-bottom: 1px solid #98a6d4;
   color: black;
-  background: #98A6D4;
+  background: #98a6d4;
 }
 
 button {
-  background: #44344F;
+  background: #44344f;
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;

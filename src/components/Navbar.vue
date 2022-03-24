@@ -42,9 +42,10 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .container-fluid {
   width: 100%;
+  top: 0;
   position: fixed;
   background-color: #f2c078;
   /* background-color: transparent !important; */

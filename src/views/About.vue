@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h3>About Us</h3>
     <div class="container section">
+      <h3>About Us</h3>
       <div class="row">
         <div class="col-md-6">
           <h4>What we have to offer</h4>
@@ -70,9 +70,9 @@
 export default {};
 </script>
 
-<style>
-body {
-  background-color: #eadaa2;
+<style scoped>
+.about {
+  /* background-color: #eadaa2; */
   height: 190vh;
 }
 
