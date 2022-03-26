@@ -1,49 +1,68 @@
 <template>
   <div class="container">
+    <h1>Our Famous Suites</h1>
     <div class="row g-5">
       <!--Room 1-->
-      <div class="col-md-4">
-        <div class="content">
-          <a href="#">
+      <router-link
+        v-for="room in rooms"
+        :key="room.room_id"
+        :to="{ name: 'RoomDetails', params: { id: room.room_id } }"
+        ><img :src="blog.post_img" alt="" />
+        {{ blog.post_title }}
+        {{ blog.post_author }}
+        {{ blog.post_body }}
+        <!-- <div class="col-md-4">
+          <div class="content">
             <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/7cNRozs.jpg" />
+            <img
+              class="content-image"
+              src="https://i.ibb.co/hXVcwDX/Deluxe-Suite-Gulf-Hotel-Bahrain-696x522.jpg"
+            />
             <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Geysers Valley Hotel</h3>
-              <router-link :to="{ name: 'Rooms' }"
+              <h3 class="content-title">Deluxe Suite</h3>
+              <router-link :to="{ name: 'RoomDetails' }"
                 ><button type="button" class="btn">
                   <span>See more</span>
                 </button></router-link
               >
             </div>
-          </a>
-        </div>
-      </div>
+          </div>
+        </div> -->
+      </router-link>
       <!--Room 2-->
       <div class="col-md-4">
         <div class="content">
-          <a href="#">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/CS59IJZ.jpg" />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Khumbu Valley Hotel</h3>
-              <p class="content-text"><i class="fa fa-map-marker"></i> Nepal</p>
-            </div>
-          </a>
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/0sBh2QY/Pool-Villa-Aleenta-Phuket-696x522.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">The Villa</h3>
+            <router-link :to="{ name: 'RoomDetails' }"
+              ><button type="button" class="btn">
+                <span>See more</span>
+              </button></router-link
+            >
+          </div>
         </div>
       </div>
       <!--Room 3-->
       <div class="col-md-4">
         <div class="content">
-          <a href="#">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Waipi’o Valley Hotel</h3>
-              <p class="content-text">
-                <i class="fa fa-map-marker"></i> Hawaii
-              </p>
-            </div>
-          </a>
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/6NNr1HB/Water-Bungalow-Sandals-South-Coast-Jamaica.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">Overwater Bungalow</h3>
+            <router-link :to="{ name: 'Rooms' }"
+              ><button type="button" class="btn">
+                <span>See more</span>
+              </button></router-link
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -52,46 +71,55 @@
       <!--Room 4-->
       <div class="col-md-4">
         <div class="content">
-          <a href="#">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Waipi’o Valley Hotel</h3>
-              <p class="content-text">
-                <i class="fa fa-map-marker"></i> Hawaii
-              </p>
-            </div>
-          </a>
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/BqpmJdz/spa-suite-image.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">The Spa Suite</h3>
+            <router-link :to="{ name: 'Rooms' }"
+              ><button type="button" class="btn">
+                <span>See more</span>
+              </button></router-link
+            >
+          </div>
         </div>
       </div>
       <!--Room 5-->
       <div class="col-md-4">
         <div class="content">
-          <a href="#">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Waipi’o Valley Hotel</h3>
-              <p class="content-text">
-                <i class="fa fa-map-marker"></i> Hawaii
-              </p>
-            </div>
-          </a>
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/HVsSbr8/st-regis.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">The Royal Suite</h3>
+            <router-link :to="{ name: 'Rooms' }"
+              ><button type="button" class="btn">
+                <span>See more</span>
+              </button></router-link
+            >
+          </div>
         </div>
       </div>
       <!--Room 6-->
       <div class="col-md-4">
         <div class="content">
-          <a href="#">
-            <div class="content-overlay"></div>
-            <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg" />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Waipi’o Valley Hotel</h3>
-              <p class="content-text">
-                <i class="fa fa-map-marker"></i> Hawaii
-              </p>
-            </div>
-          </a>
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/xHT5zbj/Grand-Velas.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">The Imperial Suite</h3>
+            <router-link :to="{ name: 'Rooms' }"
+              ><button type="button" class="btn">
+                <span>See more</span>
+              </button></router-link
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -112,6 +140,10 @@ export default {};
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 10px;
+}
+
+h1 {
+  margin-top: 30px;
 }
 
 .content {
@@ -143,6 +175,7 @@ export default {};
 
 .content-image {
   width: 100%;
+  height: 300px;
 }
 
 img {

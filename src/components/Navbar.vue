@@ -13,7 +13,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse justify-content-end navbar-collapse"
+        class="collapse justify-content-start navbar-collapse"
         id="navbarNavAltMarkup"
       >
         <div class="navbar-nav">
@@ -33,6 +33,28 @@
             >
           </li>
         </div>
+      </div>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary rounded-circle dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <router-link class="dropdown-item" to="/login">Login</router-link>
+          </li>
+          <li><hr class="dropdown-divider" /></li>
+          <li>
+            <router-link class="dropdown-item" to="/register"
+              >Sign Up</router-link
+            >
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
@@ -60,11 +82,16 @@ export default {};
 .nav-link {
   font-size: 25px;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .nav-link:active {
   color: brown;
+}
+
+.dropdown-menu {
+  width: 5px;
+  left: -200%;
 }
 
 /* .navbar-toggler {
