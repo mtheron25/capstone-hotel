@@ -1,154 +1,156 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center mt-5">
-    <div class="card">
-      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item text-center">
-          <a
-            class="nav-link active btl"
-            id="pills-home-tab"
-            data-toggle="pill"
-            href="#pills-home"
-            role="tab"
-            aria-controls="pills-home"
-            aria-selected="true"
-            >Login</a
-          >
-        </li>
-        <li class="nav-item text-center">
-          <a
-            class="nav-link btr"
-            id="pills-profile-tab"
-            data-toggle="pill"
-            href="#pills-profile"
-            role="tab"
-            aria-controls="pills-profile"
-            aria-selected="false"
-            >Signup</a
-          >
-        </li>
-      </ul>
-      <div class="tab-content" id="pills-tabContent">
-        <div
-          class="tab-pane fade show active"
-          id="pills-home"
-          role="tabpanel"
-          aria-labelledby="pills-home-tab"
-        >
-          <div class="form px-4 pt-5">
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Email or Phone"
-            />
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Password"
-            />
-            <button class="btn btn-dark btn-block">Login</button>
+  <div id="main-wrapper" class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-10">
+        <div class="card border-0">
+          <div class="card-body p-0">
+            <div class="row no-gutters">
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="mb-5">
+                    <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                  </div>
+
+                  <h6 class="h5 mb-0">Welcome back!</h6>
+                  <p class="text-muted mt-2 mb-5">
+                    Enter your email address and password to book your favourite
+                    suite.
+                  </p>
+
+                  <form @submit.prevent="login" class="form">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                      />
+                    </div>
+                    <div class="form-group mb-5">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-theme">Login</button>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-6 d-none d-lg-inline-block">
+                <div class="account-block rounded-right">
+                  <img
+                    src="https://i.ibb.co/L0r5h7W/ootp-beach-1.jpg"
+                    class="login-img"
+                    alt="ootp-beach-1"
+                    border="0"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- end card-body -->
         </div>
-        <div
-          class="tab-pane fade"
-          to="/register"
-          role="tabpanel"
-          aria-labelledby="pills-profile-tab"
-        >
-          <div class="form px-4">
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Email"
-            />
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Phone"
-            />
-            <input
-              type="text"
-              name=""
-              class="form-control"
-              placeholder="Password"
-            />
-            <button class="btn btn-dark btn-block">Signup</button>
-          </div>
-        </div>
+        <!-- end card -->
+
+        <p class="text-muted text-center mt-3 mb-0">
+          Don't have an account?
+          <router-link to="/register" class="text-primary ml-1"
+            >Sign Up</router-link
+          >
+        </p>
+
+        <!-- end row -->
       </div>
+      <!-- end col -->
     </div>
+    <!-- Row -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods() {
+    fetch("https://api-new-hotel.herokuapp.com/login", {
+      method: "PATCH",
+      body: JSON.stringify({
+        email: this.email,
+        password: this.password,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        alert("User logged in");
+        localStorage.setItem("jwt", json.jwt);
+        this.$router.push({ name: "Rooms" });
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  },
+};
 </script>
 
 <style>
-.card {
-  width: 400px;
-  border: none;
+.account-block {
+  padding: 0;
+  background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 480px;
+  position: relative;
 }
 
-.btr {
-  border-top-right-radius: 5px !important;
+.pt-5 {
+  height: 480px;
 }
 
-.btl {
-  border-top-left-radius: 5px !important;
+.login-img {
+  height: 480px;
+  width: 550px;
 }
-
-.btn-dark {
+.account-block .overlay {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.account-block .account-testimonial {
+  text-align: center;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
 }
 
-.btn-dark:hover {
+.text-theme {
+  color: #5369f8 !important;
+}
+.container {
+  margin-top: 200px;
+}
+.btn-theme {
+  background-color: #5369f8;
+  border-color: #5369f8;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.nav-pills {
-  display: table !important;
-  width: 100%;
-}
-
-.nav-pills .nav-link {
-  border-radius: 0px;
-  border-bottom: 1px solid #0d6efd40;
-}
-
-.nav-item {
-  display: table-cell;
-  background: #0d6efd2e;
-}
-
-.form {
-  padding: 10px;
-  height: 300px;
-}
-
-.form input {
-  margin-bottom: 12px;
-  border-radius: 3px;
-}
-
-.form input:focus {
-  box-shadow: none;
-}
-
-.form button {
-  margin-top: 20px;
 }
 </style>

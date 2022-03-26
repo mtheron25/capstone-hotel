@@ -94,6 +94,10 @@ export default {};
   left: -200%;
 }
 
+.rounded-circle {
+  border-radius: 50%;
+}
+
 /* .navbar-toggler {
   align-items: flex-end;
 } */

@@ -1,34 +1,77 @@
 <template>
   <div class="container">
     <h1>Our Famous Suites</h1>
+    <div class="WPd">
+      <div class="WPk">
+        <div class="WPm">
+          <div class="WPf">Check-in/Check-out</div>
+          <button class="WPo">
+            Select Dates<svg
+              class="WPq"
+              viewBox="0 0 13 13"
+              title=""
+              role="img"
+            >
+              <use
+                xlink:href="/img/sprite.svg#icon-small-calendar-3bf10"
+              ></use></svg
+            ><svg class="WPr" viewBox="0 0 320 512" title="" role="img">
+              <use xlink:href="/img/sprite.svg#icon-angle-down-5dae7"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="WPk">
+        <div class="WPn">
+          <div class="WPf">Adults</div>
+          <div class="AWd">
+            <button type="button" class="AWf minus-icon"></button
+            ><span tabindex="0" class="AWg">2</span
+            ><button type="button" class="AWe plus-icon"></button>
+          </div>
+          <input type="hidden" name="room0adultCount" value="2" />
+        </div>
+      </div>
+      <div class="WPk">
+        <div class="WPn">
+          <div class="WPf">Children</div>
+          <div class="AWd">
+            <button type="button" class="AWf minus-icon"></button
+            ><span tabindex="0" class="AWg">0</span
+            ><button type="button" class="AWe plus-icon"></button>
+          </div>
+          <input type="hidden" name="room0childCount" value="0" />
+          <div class="WPv"></div>
+        </div>
+      </div>
+      <div class="WPk">
+        <input type="hidden" name="roomData" value="0" />
+        <div class="WPg">
+          <button class="CVd CVg" disabled="" type="submit">
+            <span class="">Check Availability</span>
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="row g-5">
       <!--Room 1-->
-      <router-link
-        v-for="room in rooms"
-        :key="room.room_id"
-        :to="{ name: 'RoomDetails', params: { id: room.room_id } }"
-        ><img :src="blog.post_img" alt="" />
-        {{ blog.post_title }}
-        {{ blog.post_author }}
-        {{ blog.post_body }}
-        <!-- <div class="col-md-4">
-          <div class="content">
-            <div class="content-overlay"></div>
-            <img
-              class="content-image"
-              src="https://i.ibb.co/hXVcwDX/Deluxe-Suite-Gulf-Hotel-Bahrain-696x522.jpg"
-            />
-            <div class="content-details fadeIn-bottom">
-              <h3 class="content-title">Deluxe Suite</h3>
-              <router-link :to="{ name: 'RoomDetails' }"
-                ><button type="button" class="btn">
-                  <span>See more</span>
-                </button></router-link
-              >
-            </div>
+
+      <div class="col-md-4">
+        <div class="content">
+          <div class="content-overlay"></div>
+          <img
+            class="content-image"
+            src="https://i.ibb.co/hXVcwDX/Deluxe-Suite-Gulf-Hotel-Bahrain-696x522.jpg"
+          />
+          <div class="content-details fadeIn-bottom">
+            <h3 class="content-title">Deluxe Suite</h3>
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
-        </div> -->
-      </router-link>
+        </div>
+      </div>
+
       <!--Room 2-->
       <div class="col-md-4">
         <div class="content">
@@ -39,11 +82,9 @@
           />
           <div class="content-details fadeIn-bottom">
             <h3 class="content-title">The Villa</h3>
-            <router-link :to="{ name: 'RoomDetails' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
         </div>
       </div>
@@ -57,11 +98,10 @@
           />
           <div class="content-details fadeIn-bottom">
             <h3 class="content-title">Overwater Bungalow</h3>
-            <router-link :to="{ name: 'Rooms' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
+
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
         </div>
       </div>
@@ -78,11 +118,9 @@
           />
           <div class="content-details fadeIn-bottom">
             <h3 class="content-title">The Spa Suite</h3>
-            <router-link :to="{ name: 'Rooms' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
         </div>
       </div>
@@ -96,11 +134,9 @@
           />
           <div class="content-details fadeIn-bottom">
             <h3 class="content-title">The Royal Suite</h3>
-            <router-link :to="{ name: 'Rooms' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
         </div>
       </div>
@@ -114,11 +150,9 @@
           />
           <div class="content-details fadeIn-bottom">
             <h3 class="content-title">The Imperial Suite</h3>
-            <router-link :to="{ name: 'Rooms' }"
-              ><button type="button" class="btn">
-                <span>See more</span>
-              </button></router-link
-            >
+            <button type="button" class="btn">
+              <span>See more</span>
+            </button>
           </div>
         </div>
       </div>
@@ -152,6 +186,18 @@ h1 {
   max-width: 400px;
   margin: auto;
   overflow: hidden;
+}
+
+.WPd {
+  position: relative;
+  z-index: 2;
+  display: none;
+  min-height: 7.5rem;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1.375rem 0 0.75rem;
+  background-color: #fff;
+  text-align: left;
 }
 
 .content .content-overlay {

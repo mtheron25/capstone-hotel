@@ -33,7 +33,7 @@ export default {
   methods: {
     handleSubmit() {
       console.log(this.name, this.email, this.contact, this.messsage);
-      fetch("https://hotel-new-api.herokuapp.com/contact", {
+      fetch("https://api-new-hotel.herokuapp.com/contact", {
         method: "POST",
         body: JSON.stringify({
           title: "foo",
